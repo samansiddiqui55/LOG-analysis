@@ -1,34 +1,108 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Dashboard specific styles */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.chart-container {
+  height: 350px;
+  width: 100%;
 }
 
-.App-link {
-    color: #61dafb;
+/* Drop zone animations */
+.drop-zone {
+  @apply border-2 border-dashed border-border rounded-lg transition-all duration-300;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.drop-zone:hover,
+.drop-zone.drag-over {
+  @apply border-primary bg-primary/5;
+}
+
+.drop-zone.drag-over {
+  @apply border-solid glow-primary;
+}
+
+/* Terminal style log viewer */
+.log-viewer {
+  @apply font-mono text-xs leading-relaxed;
+}
+
+.log-entry {
+  @apply py-1 px-3 border-l-2 transition-colors duration-150;
+}
+
+.log-entry:hover {
+  @apply bg-muted/50;
+}
+
+.log-entry.error {
+  @apply border-l-destructive;
+}
+
+.log-entry.warning {
+  @apply border-l-warning;
+}
+
+.log-entry.info {
+  @apply border-l-primary;
+}
+
+/* Chart customizations */
+.recharts-tooltip-wrapper {
+  @apply !outline-none;
+}
+
+.chart-tooltip {
+  @apply bg-card/95 backdrop-blur-md border border-border rounded-lg shadow-xl p-3;
+}
+
+/* Summary card typewriter effect */
+.typewriter {
+  overflow: hidden;
+  white-space: pre-wrap;
+  animation: typing 0.5s steps(40, end);
+}
+
+@keyframes typing {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px;
+  }
+}
+
+/* Button glow effects */
+.btn-glow {
+  @apply relative overflow-hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 122, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-glow:hover::after {
+  opacity: 1;
+}
+
+/* Stats card hover */
+.stats-card {
+  @apply transition-all duration-300;
+}
+
+.stats-card:hover {
+  @apply -translate-y-1;
 }
