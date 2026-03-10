@@ -285,7 +285,7 @@ Generated: ${new Date().toLocaleString()}
   return (
     <div className={`min-h-screen ${isDark ? "dark" : ""}`}>
       <div className="min-h-screen bg-background text-foreground noise-overlay relative">
-        <Toaster position="top-right" theme={isDark ? "dark" : "light"} richColors />
+        <Toaster position="bottom-right" theme={isDark ? "dark" : "light"} richColors />
         
         {/* Header */}
         <header className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-xl">
