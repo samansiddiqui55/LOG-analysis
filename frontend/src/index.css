@@ -94,7 +94,9 @@
 
 @layer utilities {
   .glass {
-    @apply bg-card/70 backdrop-blur-xl border border-white/10;
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .glow-primary {
@@ -103,6 +105,18 @@
 
   .glow-error {
     box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+
+  .bg-warning {
+    background-color: hsl(var(--warning));
+  }
+
+  .border-warning {
+    border-color: hsl(var(--warning));
   }
 
   .animate-fade-in {
@@ -160,15 +174,15 @@
 
 /* Log type colors */
 .log-error {
-  @apply text-destructive;
+  color: hsl(var(--destructive));
 }
 
 .log-warning {
-  @apply text-warning;
+  color: hsl(var(--warning));
 }
 
 .log-info {
-  @apply text-primary;
+  color: hsl(var(--primary));
 }
 
 /* Noise texture overlay */

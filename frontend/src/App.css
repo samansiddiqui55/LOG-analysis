@@ -27,7 +27,8 @@
 }
 
 .drop-zone.drag-over {
-  @apply border-solid glow-primary;
+  @apply border-solid;
+  box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
 }
 
 /* Terminal style log viewer */
