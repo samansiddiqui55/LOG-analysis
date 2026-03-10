@@ -1,0 +1,115 @@
+{
+  "identity": {
+    "persona": "E1 - The Anti-AI Designer",
+    "archetype": "The Performance Pro",
+    "mission": "Create a Log Analysis Dashboard that feels like a tactical command center. Precision, speed, and clarity are paramount. No generic SaaS fluff."
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Chivo",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "weights": {
+      "heading": "900",
+      "body": "400",
+      "bold": "700"
+    },
+    "scaling": {
+      "h1": "text-4xl md:text-5xl tracking-tight",
+      "h2": "text-3xl tracking-tight",
+      "h3": "text-xl font-bold uppercase tracking-widest",
+      "body": "text-sm leading-relaxed",
+      "mono": "text-xs md:text-sm"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#007AFF",
+      "secondary": "#FF3B30",
+      "background": "#0A0A0A",
+      "surface": "#111111",
+      "surface_highlight": "#1A1A1A",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A1A1AA",
+      "border": "#27272A",
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444"
+    },
+    "gradients": {
+      "subtle_glow": "radial-gradient(circle at center, rgba(0, 122, 255, 0.15) 0%, transparent 70%)"
+    }
+  },
+  "layout": {
+    "grid_system": "Bento Grid - Mode B (High Density)",
+    "spacing": {
+      "container_padding": "p-6 md:p-8",
+      "gap": "gap-4 md:gap-6",
+      "internal_padding": "p-4"
+    },
+    "structure": {
+      "sidebar": "w-64 hidden md:flex flex-col border-r border-border bg-surface",
+      "main": "flex-1 flex flex-col overflow-hidden bg-background",
+      "header": "h-16 border-b border-border flex items-center px-6 justify-between bg-surface/50 backdrop-blur-xl"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-white hover:bg-primary/90 shadow-[0_0_15px_rgba(0,122,255,0.3)] rounded-md font-medium transition-all active:scale-95",
+      "secondary": "bg-surface border border-border hover:bg-surface_highlight text-white rounded-md transition-all",
+      "ghost": "hover:bg-surface_highlight text-text_secondary hover:text-white transition-colors"
+    },
+    "cards": {
+      "base": "bg-surface border border-border rounded-lg overflow-hidden relative group",
+      "hover_effect": "hover:border-primary/50 transition-colors duration-300",
+      "glass": "bg-surface/70 backdrop-blur-md border border-white/10"
+    },
+    "inputs": {
+      "base": "bg-surface_highlight border-border focus:border-primary focus:ring-1 focus:ring-primary rounded-md text-white placeholder:text-text_secondary/50"
+    },
+    "charts": {
+      "library": "Recharts",
+      "style": "Minimalist, thin lines, gradient fills with low opacity. Tooltips must be dark glassmorphism."
+    }
+  },
+  "visual_enhancers": {
+    "borders": "1px solid #27272A (Dark Mode) / #E4E4E7 (Light Mode)",
+    "shadows": "shadow-lg shadow-black/20",
+    "textures": "Subtle noise overlay on the background to reduce digital flatness.",
+    "animations": {
+      "hover": "transition-all duration-200 ease-out",
+      "enter": "animate-in fade-in zoom-in-95 duration-300"
+    }
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "background_texture",
+        "url": "https://images.unsplash.com/photo-1762279389006-43963a0cee55?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMHRlY2hub2xvZ3klMjBkYXRhJTIwdmlzdWFsaXphdGlvbiUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3MzE0Nzc3NXww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract neon lines on dark background. Use with low opacity (5-10%) as a background texture for the main dashboard area or empty states."
+      }
+    ],
+    "icons": "Lucide React (default)"
+  },
+  "instructions_to_main_agent": [
+    "IMPLEMENTATION_STRATEGY: Start by setting up the global theme variables in index.css to match the 'Performance Pro' palette.",
+    "LAYOUT: Build a responsive shell with a sidebar (collapsible on mobile) and a main content area.",
+    "THEME_TOGGLE: Ensure the theme toggle switches between the 'Deep Obsidian' dark mode and a 'Stark White/Gray' light mode (Swiss Style).",
+    "FILE_UPLOAD: Create a distinct 'Drop Zone' area. It should feel like inserting a data cartridge. Use dashed borders that turn solid/glow on drag over.",
+    "LOG_VIEWER: This is the core. It must look like a high-end terminal. Use JetBrains Mono. Implement virtualization if possible or simple overflow-auto for MVP. Color-code log levels (ERROR=Red, INFO=Blue, WARN=Yellow).",
+    "AI_SUMMARY: Present this as a 'Mission Report'. Use a typewriter effect for the text generation if possible, or just a clean fade-in.",
+    "CHARTS: Use Recharts. Create a toggle to switch between Line (Trends) and Bar (Counts). Ensure axes are legible.",
+    "EXPORT: Simple, functional buttons. 'Export PDF', 'Export Text'.",
+    "DEMO_DATA: Add a 'Load Simulation' button that populates the dashboard with fake data instantly for testing.",
+    "CRITICAL: Do not use default Shadcn card styles. Remove the heavy shadows and use 1px borders with subtle background differentiation."
+  ],
+  "universal_guidelines": [
+    "Avoid 'AI Slop' - generic centered layouts and gradients.",
+    "Use 2-3x more spacing than typical.",
+    "Every interaction needs micro-animations.",
+    "All interactive elements must have data-testid attributes.",
+    "Use Sonner for toasts.",
+    "Prioritize existing Shadcn components but customize them via className."
+  ]
+}
